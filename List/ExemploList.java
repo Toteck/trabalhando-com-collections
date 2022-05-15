@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ExemploList {
@@ -69,6 +70,22 @@ public class ExemploList {
         System.out.println(notas);
 
         System.out.println("Confira se a lista está vazia: " + notas.isEmpty());
+
+        /* Resolva esses exercícios utilizando os métodos do implementação LinkedList:*/
+        System.out.println("Crie uma lista chamada notas2 ");
+        // E coloque todos os elementos da list ArrayList nessa nova lista: 
+        LinkedList<Double> notas2 = new LinkedList<Double>();
+        notas2.add(7d);
+        notas2.add(8.5);
+        notas2.add(9.3);
+        notas2.add(5d);
+        notas2.add(9d);
+        notas2.add(4.5);
+        notas2.add(3.5);
+        System.out.println(notas2);
+        System.out.println("Mostre o primeira nota da noa lista sem removê-lo: " + notas2.getFirst());
+        System.out.println("Mostre a primeira nota da nova lista removendo-o: " + notas2.removeFirst());
+        System.out.println(notas2);
 
         }
 
