@@ -35,6 +35,7 @@ public class Ex1 {
                 System.out.println(String.format("%s %.0f", meses.get(i), tempMedia.get(i)));
             }
         }
+        input.close();
         
     }
 }

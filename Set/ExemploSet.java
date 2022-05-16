@@ -1,3 +1,11 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
 public class ExemploSet {
     
     public static void main (String args[]){
@@ -14,6 +22,73 @@ public class ExemploSet {
 
         System.out.println("Crie um conjunto e adicione as notas: ");
         Set<Double> notas = new HashSet<>(Arrays.asList(7d, 8.5, 9.3, 5d, 7d, 0d, 3.6));
+        System.out.println(notas.toString());
         
+        //System.out.println("Exiba a posição da nota 5.0: ");
+        // Quando eu tô trabalhando com set eu não consigo 
+        //pesquisar ou fazer buscas com a posição porque a ordem é aleatória
+        //System.out.println("Adicione na lista a nota 8.0 na posiçao 4: ");
+        // Também não da para fazer porque não consigo trabalhar com posição dentro de um set
+        //System.out.println("Substitua a nota 5.0 pela nota 6.0: ");
+        // Também não da para fazer
+        System.out.println("Confira se a nota 5.0 está no conjunto: " + notas.contains(5d));
+
+        //System.out.println("Exiba a 3º nota adicionada: ");
+        // Eu não tenho o método get para passar o indice e me retornar a nota
+
+        System.out.println("Exiba a menor nota: " + Collections.min(notas));
+
+        System.out.println("Exiba a maior nota: " + Collections.max(notas));
+
+        System.out.println("Exiba a soma dos valores: ");
+        Iterator<Double> iterator = notas.iterator();
+        Double soma = 0.0;
+        while(iterator.hasNext()){
+            Double next = iterator.next();
+            soma += next;
+        }
+        System.out.println("Exiba a soma dos valores: " + soma);
+
+        System.out.println("Exiba a média das notas: " + (soma/ notas.size()));
+
+        System.out.println("Remova a nota 0");
+        notas.remove(0d);
+        System.out.println(notas);
+
+        System.out.println("Remova a nota da posição 0");
+        // Como eu não tenho como saber a posição da minha nota 0. Não dá para fazer
+
+        System.out.println("Remova as notas menores que 7 e exiba a lista: ");
+        Iterator<Double> iterator1 = notas.iterator();
+        while(iterator1.hasNext()){
+            Double next = iterator1.next();
+            if (next < 7) iterator1.remove();
+        }
+        System.out.println(notas);
+
+        System.out.println("Exiba todas as notas na ordem em que foram informados: ");
+        // Para eu conseguir a ordem de inserção eu tenho que usar LinkedHashSet
+        Set<Double> notas2 = new LinkedHashSet<>();
+        notas2.add(7d);
+        notas2.add(8.5);
+        notas2.add(9.3);
+        notas2.add(5d);
+        //notas2.add(7);
+        notas2.add(0d);
+        notas2.add(3.6);
+        System.out.println(notas2);
+
+        System.out.println("Exiba todas as notas na ordem crescente: ");
+        // Aqui eu tenho que trabalhar com TreeSet porque ele 
+        //trabalha com a ordem natural dos elementos e eu tô 
+        //usando o Double e o Double tem aquele Comparable
+        Set<Double> notas3 = new TreeSet<>(notas2);
+        // Eu só pude passar o notas2 porque ele tem o Comparable
+        System.out.println(notas3);
+        
+
+
+
+
     }
 }
