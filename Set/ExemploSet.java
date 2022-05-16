@@ -85,10 +85,11 @@ public class ExemploSet {
         Set<Double> notas3 = new TreeSet<>(notas2);
         // Eu só pude passar o notas2 porque ele tem o Comparable
         System.out.println(notas3);
-        
 
+        System.out.println("Apague todo o conjunto");
+        notas.clear();
 
-
+        System.out.println("Confira se o conjunto está vazio: " + notas.isEmpty());
 
     }
 }
