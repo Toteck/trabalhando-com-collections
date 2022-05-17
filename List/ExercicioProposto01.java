@@ -77,6 +77,7 @@ public class ExercicioProposto01 {
             }
             count++;
         }
+        scan.close();
     }
 }
 

@@ -46,6 +46,7 @@ public class Ex2 {
         else{
             System.out.println("Inocente");
         }
+        input.close();
         
     }
 }
