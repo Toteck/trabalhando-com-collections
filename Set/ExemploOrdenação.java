@@ -101,6 +101,7 @@ class Serie implements Comparable<Serie>{
     @Override
     public int compareTo(Serie serie) {
         
+        
         int tempoEpisodio = Integer.compare(this.getTempoEpisodio(), serie.getTempoEpisodio());
         if(tempoEpisodio != 0) return tempoEpisodio;
         return this.getGenero().compareTo(serie.getGenero());
