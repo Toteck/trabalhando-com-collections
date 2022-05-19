@@ -1,8 +1,9 @@
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.TreeSet;
-
+import java.util.Iterator;
 
 
 public class Exercicio01 {
@@ -38,7 +39,8 @@ public class Exercicio01 {
         // Exiba as cores na ordem inversa da que foi informada
         /*TreeSet<String> carrosOrdemInversa = new TreeSet<>(new OrdemInversa());*/
         System.out.println("");
-        LinkedHashSet<String> cores3 = new LinkedHashSet<>();
+        Set<String> cores3 = new LinkedHashSet<>();
+        //Set<Serie> minhaSeries2 = new LinkedHashSet<>()
         cores3.add("vermelha");
         cores3.add("laranha");
         cores3.add("amarela");
@@ -46,11 +48,9 @@ public class Exercicio01 {
         cores3.add("azul");
         cores3.add("azul-escuro");
         cores3.add("violeta");
-        System.out.println(cores3);
-
-
         
-        
+              
+
     }
 }
 
