@@ -4,6 +4,7 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 /*Dados as seguintes informações sobre minhas séries favoritas.
 Crie um conjunto e ordene este conjunto exibindo: 
@@ -42,10 +43,19 @@ public class ExemploOrdenação {
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
 
         System.out.println("--\tOrdem Nome/Gênero/TempoEpisodio\t--");
-        Set<Serie> minhasSeries4 = new TreeSet<>(new ComparatorNomeGeneroTempoEpisodio());
-        minhasSeries4.addAll(minhaSeries); // Quando eu adicionar essas "minhaSeries" ela vai ser organizada em Nome, depois gênero e depois tempo de episódio.
-        for (Serie serie : minhasSeries4)
-            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
+        Set<Serie> minhasSeriesNomeGeneroTempEp = new HashSet<>();
+        minhasSeriesNomeGeneroTempEp.addAll(minhaSeries);
+        minhasSeriesNomeGeneroTempEp.stream().sorted((s1, s2) -> {
+            int nome = s1.getNome().compareToIgnoreCase(s2.getNome());
+            if(nome != 0) return nome;
+
+            int genero = s1.getGenero().compareToIgnoreCase(s2.getGenero());
+            if (genero != 0) return genero;
+
+            return Integer.compare(s1.getTempoEpisodio(), s2.getTempoEpisodio());
+        })
+        .collect(Collectors.toList()).forEach(serie -> System.out.println(serie));
+        
         
     }
 
