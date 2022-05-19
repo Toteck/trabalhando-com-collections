@@ -1,0 +1,84 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Exercicio01",
+            "request": "launch",
+            "mainClass": "Exercicio01",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exemplo2",
+            "request": "launch",
+            "mainClass": "Exemplo2",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ex1",
+            "request": "launch",
+            "mainClass": "Ex1",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ex2",
+            "request": "launch",
+            "mainClass": "Ex2",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exemplo",
+            "request": "launch",
+            "mainClass": "Exemplo",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExemploList",
+            "request": "launch",
+            "mainClass": "ExemploList",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExemploOrdenacaoList",
+            "request": "launch",
+            "mainClass": "ExemploOrdenacaoList",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExemploOrdenação",
+            "request": "launch",
+            "mainClass": "ExemploOrdenação",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExemploSet",
+            "request": "launch",
+            "mainClass": "ExemploSet",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExercicioProposto01",
+            "request": "launch",
+            "mainClass": "ExercicioProposto01",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        }
+    ]
+}
