@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ExercioSet02",
+            "request": "launch",
+            "mainClass": "ExercioSet02",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Exercicio01Resposta",
+            "request": "launch",
+            "mainClass": "Exercicio01Resposta",
+            "projectName": "trabalhando-com-collections_8878b92d"
+        },
+        {
+            "type": "java",
             "name": "Launch Exercicio01",
             "request": "launch",
             "mainClass": "Exercicio01",
