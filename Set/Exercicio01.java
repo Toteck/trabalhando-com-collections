@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.TreeSet;
 
 
 public class Exercicio01 {
@@ -38,8 +40,8 @@ public class Exercicio01 {
 
         // Exiba as cores na ordem inversa da que foi informada
         /*TreeSet<String> carrosOrdemInversa = new TreeSet<>(new OrdemInversa());*/
-        System.out.println("");
-        Set<String> cores3 = new LinkedHashSet<>();
+        System.out.println("\n\n\nOrdem inversa de inserção\n");
+        LinkedHashSet<String> cores3 = new LinkedHashSet<>();
         //Set<Serie> minhaSeries2 = new LinkedHashSet<>()
         cores3.add("vermelha");
         cores3.add("laranha");
@@ -48,8 +50,44 @@ public class Exercicio01 {
         cores3.add("azul");
         cores3.add("azul-escuro");
         cores3.add("violeta");
+       
+        // Convertendo para um ArrayList
+        ArrayList<String> allColors = new ArrayList<String> (cores3);
+
+        // Para reverter o conteúdo do LinkedHashSet
+        Collections.reverse(allColors);
+        for(String cor : allColors){
+            System.out.println(cor);
+        }
+
+        System.out.println("\n\n\nExiba todas as cores que começam com a letra 'V'\n");
+        for(String cor : cores3){
+            if(cor.startsWith("v")){
+                System.out.println(cor);
+            }
+
+        }
+
+        System.out.println("\n\n\nRemova todas as cores que não começam com a letra V");
+        Iterator<String> itr = cores3.iterator();
+        while(itr.hasNext()){
+            String next = itr.next();
+            if(next.startsWith("v"));
+            else{
+                itr.remove();
+            }
+        }
+        for(String cor : cores3){
+            System.out.println(cor);
+        }
+
+        System.out.println("\n\n\nLimpe o conjunto\n");
+        cores3.clear();
+        System.out.println(cores3);
+
+        System.out.println("\n\n\nConfira se o conjunto etá vazio");
+        System.out.println(cores3.isEmpty());
         
-              
 
     }
 }
