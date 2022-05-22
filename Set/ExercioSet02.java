@@ -2,7 +2,7 @@ import java.util.*;
 
 /* Ordene esse conjunto
 Ordem de inserção
-Ordem natural
+Ordem natural (nome)
 IDE
 Ano de criação e nome
 Nome, ano de criação e IDE
@@ -30,16 +30,32 @@ public class ExercioSet02 {
         for (LinguagemFavorita ling : ling2)
             System.out.println(ling.getNome() + " - " + ling.getIde() + " - " + ling.getAnoDeCriacao());
 
-            
         
+        System.out.println("\n\n---\tOrdem Natural (Nome)---");
+        Set<LinguagemFavorita> ling3 = new TreeSet<>(ling2);
+        for(LinguagemFavorita ling : ling3){
+            System.out.println(ling.getNome() + " - " + ling.getIde() + " - " + ling.getAnoDeCriacao());
+        }
 
+        System.out.println("\n\n---\tOrdem Natural (IDE)---");
+
+        Set<LinguagemFavorita> ling4 = new TreeSet<>(new ComparatorIDE());
+        ling4.addAll(ling3);
+        for (LinguagemFavorita ling : ling4)
+            System.out.println(ling.getNome() + " - " + ling.getIde() + " - " + ling.getAnoDeCriacao()); 
+
+        System.out.println("\n\n---\tOrdem Natural (Ano de Criação)---");
+        Set<LinguagemFavorita> ling5 = new TreeSet<>(new ComparatorAnoDeCriacao());
+        ling5.addAll(ling4);
+        for (LinguagemFavorita ling : ling5)
+            System.out.println(ling.getNome() + " - " + ling.getIde() + " - " + ling.getAnoDeCriacao());
 
     }
     
 }
 
 
-class LinguagemFavorita {
+class LinguagemFavorita implements Comparable<LinguagemFavorita>{
 
     /*nome, anoDeCriancao e IDE*/
     private String nome;
@@ -77,5 +93,40 @@ class LinguagemFavorita {
                 '}';
     }
 
+    @Override
+    public int hashCode(){
+        return Objects.hash(nome, ide, anoDeCriacao);
+    }
 
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LinguagemFavorita lingfav = (LinguagemFavorita) o;
+        return nome.equals(lingfav.nome) && ide.equals(lingfav.ide) && anoDeCriacao.equals(lingfav.anoDeCriacao);
+    }
+
+    @Override
+    public int compareTo(LinguagemFavorita o) {
+        return this.getNome().compareTo(o.getNome());
+    }
 }
+
+class ComparatorIDE implements Comparator<LinguagemFavorita>{
+
+    @Override
+    public int compare(LinguagemFavorita o1, LinguagemFavorita o2){
+        return o1.getIde().compareTo(o2.getIde());
+    }
+}
+
+class ComparatorAnoDeCriacao implements Comparator<LinguagemFavorita>{
+
+    @Override
+    public int compare(LinguagemFavorita o1, LinguagemFavorita o2){
+        return Integer.compare(o1.getAnoDeCriacao(), o2.getAnoDeCriacao());
+    }
+}
+
+
+class CompartorAno
