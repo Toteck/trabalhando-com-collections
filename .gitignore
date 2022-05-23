@@ -7,3 +7,16 @@
 trabalhando-com-collections.iml
 .idea/misc.xml
 .vscode/launch.json
+.idea/uiDesigner.xml
+out/production/trabalhando-com-collections/CompararAlfabeticamente.class
+out/production/trabalhando-com-collections/ComparatorCor.class
+out/production/trabalhando-com-collections/ComparatorAnoDeCriacao.class
+out/production/trabalhando-com-collections/ComparatorIdade.class
+out/production/trabalhando-com-collections/ComparatorNomeAnoDeCriacaoIDE.class
+out/production/trabalhando-com-collections/ComparatorNomeGeneroTempoEpisodio1.class
+out/production/trabalhando-com-collections/CompartorAnoDeCriacaoNome.class
+out/production/trabalhando-com-collections/Ex2.class
+*.class
+*.class
+.vscode/launch.json
+*.json

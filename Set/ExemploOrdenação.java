@@ -119,7 +119,7 @@ class Serie implements Comparable<Serie>{
 
 }
 
-class ComparatorNomeGeneroTempoEpisodio implements Comparator<Serie>{
+class ComparatorNomeGeneroTempoEpisodio1 implements Comparator<Serie>{
 
     @Override
     public int compare(Serie s1, Serie s2) {
