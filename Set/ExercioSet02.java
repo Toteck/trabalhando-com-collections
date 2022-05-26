@@ -50,7 +50,7 @@ public class ExercioSet02 {
         for (LinguagemFavorita ling : ling6)
             System.out.println(ling.getNome() + " - " + ling.getIde() + " - " + ling.getAnoDeCriacao());
 
-            System.out.println("\n\n\t--- Ordem Nome/Ano de criacao/IDE---");
+            System.out.println("\n\n--- Ordem Nome/Ano de criacao/IDE---");
             Set<LinguagemFavorita> ling7 = new TreeSet<>(new ComparatorNomeAnoDeCriacaoIDE());
             
             ling7.add(new LinguagemFavorita("Dart", "IntellJ", 2011));
