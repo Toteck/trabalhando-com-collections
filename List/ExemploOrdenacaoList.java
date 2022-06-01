@@ -32,7 +32,7 @@ public class ExemploOrdenacaoList {
         System.out.println(meusGatos);
 
         System.out.println("--\tOrdem Natural (Nome)\t---");
-        ;
+
         Collections.sort(meusGatos);
         System.out.println(meusGatos);
 

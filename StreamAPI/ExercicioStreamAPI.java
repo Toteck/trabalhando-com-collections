@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalInt;
-import java.util.Set;
+import java.util.*;
 import java.util.function.DoubleConsumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -12,7 +9,7 @@ public class ExercicioStreamAPI {
 
     public static void main(String[] args){
 
-        List<String> numAleatorios = Arrays.asList("6", "1", "1", "1", "2", "4", "8");
+        List<String> numAleatorios = Arrays.asList("6", "1", "1", "1", "2", "4", "8","9", "5", "3", "15", "25", "30");
 
         System.out.println("Imprima todos os elementos dessa lista de String: ");
         numAleatorios.forEach(System.out::println);
@@ -46,19 +43,18 @@ public class ExercicioStreamAPI {
                 .ifPresent(System.out::println);
 
         System.out.println("Remova os valores impares");
-        numerosAleatoriosInteger.removeIf(integer -> (integer % 2 != 0));
+        //numerosAleatoriosInteger.removeIf(integer -> (integer % 2 != 0));
         System.out.println(numerosAleatoriosInteger);
 
         System.out.println("Ignore os 3 primeiros elementos da lista e imprima o restante");
-        Set<String> collectSet2 = numAleatorios.stream()
+        numAleatorios.stream()
                 .skip(3)
-                .collect(Collectors.toSet());
-        collectSet2.forEach(System.out::println);
+                .forEach(System.out::println);
 
-        Set<Integer> collectSetInteger = numAleatorios.stream()
-                .map(Integer::parseInt)
-                .collect(Collectors.toSet());
-        System.out.println("Retirando os números repetidos da lista, quantos números ficam? " + collectSetInteger.size());
+        long contNumerosUnicos = numAleatorios.stream()
+                .distinct()
+                .count();
+        System.out.println("Retirando os números repetidos da lista, quantos números ficam? " + contNumerosUnicos);
 
 
         System.out.print("Mostre o menor valor da lista: ");
@@ -66,20 +62,31 @@ public class ExercicioStreamAPI {
                 .mapToInt(Integer::parseInt)
                 .min()
                 .ifPresent(System.out::println);
+
         System.out.print("Mostre o maior valor da lista: ");
         numAleatorios.stream()
-                        .mapToInt(Integer::parseInt)
-                                .max()
-                                        .ifPresent(System.out::println);
-        int sumNumerosImpares = numAleatorios.stream()
                 .mapToInt(Integer::parseInt)
-                .filter(i -> (i % 2 != 0))
+                .max()
+                .ifPresent(System.out::println);
+
+
+        int sumNumerosImpares = numerosAleatoriosInteger.stream()
+                .filter(i -> (i % 2 == 0))
+                .mapToInt(Integer::intValue)
                 .sum();
-        System.out.println("Pegue apenas os números impares e some" + sumNumerosImpares);
+        System.out.println("Pegue apenas os números impares e some: " + sumNumerosImpares);
 
 
-        System.out.println("Mostre a lista na ordem númerica");
+        System.out.println("Mostre a lista na ordem númerica ");
+        List<Integer> numerosOrdemNatural = numerosAleatoriosInteger.stream()
+                .sorted(Comparator.naturalOrder())
+                .collect(Collectors.toList());
+        System.out.println(numerosOrdemNatural);
+
         System.out.println("Agrupe os valores impares múltiplos de 3 e de 5: ");
+        Map<Boolean, List<Integer>> collectNumerosMultiplosDe3e5 = numerosOrdemNatural.stream()
+                .collect(Collectors.groupingBy(i -> (i % 3 == 0 || i % 5 == 0)));
+        System.out.println(collectNumerosMultiplosDe3e5);
         // dica: collect(Collectors.groupingBy(new Function())
     }
 }
